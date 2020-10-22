@@ -147,7 +147,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="ko">
-    <link itemprop="mainEntityOfPage" href="http://stelladuck.github.io/2020/10/19/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://stelladuck.github.io/2020/10/22/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -161,7 +161,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/19/hello-world/" class="post-title-link" itemprop="url">Hello World + Hexo 설치</a>
+            <a href="/2020/10/22/hello-world/" class="post-title-link" itemprop="url">Hello World + Hexo 설치</a>
         </h2>
 
         <div class="post-meta">
@@ -171,7 +171,7 @@
               </span>
               <span class="post-meta-item-text">작성일</span>
 
-              <time title="Post created: 2020-10-19 23:04:10" itemprop="dateCreated datePublished" datetime="2020-10-19T23:04:10+09:00">2020-10-19</time>
+              <time title="Post created: 2020-10-22 10:19:24" itemprop="dateCreated datePublished" datetime="2020-10-22T10:19:24+09:00">2020-10-22</time>
             </span>
 
           
@@ -187,6 +187,9 @@
       
           <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <p>다양한 깃블로그를 구경하다가 NexT라는 테마가 마음에 들어 설치해보고자 마음을 먹었다. 우여곡절 끝에 Ubuntu 20.04(혹은 18.04)에 설치하는 것은 성공적이었지만 깃 사용법에 익숙하지 않고 웹서버와 관련된 지식이 전혀 없다보니 여러 시행착오가 있었다. 이 글은 필자가 겪었던 비슷한 어려움에 직면한 이들을 위해 작게나마 도움이 되는 전반적인 방법을 제공한다. 부디 도움이 되길 바란다.</p>
+<p><span class="math display">\[\begin{equation*}
+\sum_{\delta \in \omega}\kappa(\delta, A) \approx \lim_{x \to q}\left[\frac{\Omega^{\hbar}(x;q)}{3n}\prod_{\delta\in\omega}f(y;\delta)\right]
+\end{equation*}\]</span></p>
 <h2 id="헥소hexo를-다루기-이전에">헥소(Hexo)를 다루기 이전에</h2>
 <h3 id="헥소란-무엇인가">헥소란 무엇인가?</h3>
 <p>핵소(Hexo)논 지킬(Jekyll)처럼 강력한 블로그 프레임워크다. 다만 큰 차이점으로 지킬은 Ruby기반이며 헥소는 node.js를 기반으로 하였다. 또한 node.js를 사용하는 헥소는 지킬보다 빠른 속도를 자랑하는 것이 큰 장접이다. 이 글은 node.js와 npm을 설치하는 방법과 헥소를 설정하는 방법을 제공한다.</p>
@@ -387,6 +390,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
